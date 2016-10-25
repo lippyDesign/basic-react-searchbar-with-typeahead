@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const typeaheadOptions = ["bag", "wallet", "green", "leather", "Lena", "Les", "NASA"]
+const typeaheadOptions = ["bag", "wallet", "green", "leather", "Lena", "Les", "NASA", "x-ray", "zebra"];
 
 export default class SearchBar extends Component {
     constructor() {
@@ -47,28 +47,35 @@ export default class SearchBar extends Component {
 
     onFormSubmit(event) {
         event.preventDefault();
-        // go and fetch product data
-        this.props.fetchProducts(this.state.term);
-        // clear search bar
-        this.setState({ term: '' });
+        console.log('Submitted')
     }
 
     render() {
-        return <form className="searchProductForm" onSubmit={this.onFormSubmit.bind(this)} >
-                <span className="searchProductInputAndButtonWrapper">
-                    <input
-                        placeholder="Type in a Category, Make, Model, SKU #, etc..."
-                        className="searchProductInput"
-                        value={this.state.term}
-                        onChange={this.onInputChange.bind(this)}
-                    />
-                    <button type="submit" className="searchProductButton">
-                        Search
-                    </button>
-                </span>
-                <ul className="typeaheadOptionsList">
-                    {this.getTypeaheadOptions()}
-                </ul>
-            </form>
+        return <main>
+                <form className="searchProductForm" onSubmit={this.onFormSubmit.bind(this)} >
+                    <span className="searchProductInputAndButtonWrapper">
+                        <input
+                            placeholder="Type in a Category, Make, Model, SKU #, etc..."
+                            className="searchProductInput"
+                            value={this.state.term}
+                            onChange={this.onInputChange.bind(this)}
+                        />
+                        <button type="submit" className="searchProductButton">
+                            Search
+                        </button>
+                    </span>
+                    <ul className="typeaheadOptionsList">
+                        {this.getTypeaheadOptions()}
+                    </ul>
+                </form>
+                <div>
+                    <p>
+                        Available Hardcoded Options: "bag", "wallet", "green", "leather", "Lena", "Les", "NASA", "x-ray", "zebra"
+                    </p>
+                    <p>
+                        Source Code <a href="https://github.com/lippyDesign/basic-react-searchbar-with-typeahead" target="_blank">on Git Hub</a>
+                    </p>
+                </div>
+            </main>
     }
 }
