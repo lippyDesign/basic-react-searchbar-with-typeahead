@@ -68,14 +68,14 @@ export default class SearchBar extends Component {
                         {this.getTypeaheadOptions()}
                     </ul>
                 </form>
-                <div>
+                <section className="pageDescription">
                     <p>
                         Available Hardcoded Options: "bag", "wallet", "green", "leather", "Lena", "Les", "NASA", "x-ray", "zebra"
                     </p>
                     <p>
                         Source Code <a href="https://github.com/lippyDesign/basic-react-searchbar-with-typeahead" target="_blank">on Git Hub</a>
                     </p>
-                </div>
+                </section>
             </main>
     }
 }
