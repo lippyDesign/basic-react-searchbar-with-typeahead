@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const typeaheadOptions = ["bag", "wallet", "green", "leather", "Lena", "Les", "NASA", "x-ray", "zebra"];
+const typeaheadOptions = ["bag", "wallet", "green", "leather", "Lena", "Les", "NASA", "x-ray", "zebra", "Bob", "U.S.A"];
 
 export default class SearchBar extends Component {
     constructor() {
@@ -52,6 +52,7 @@ export default class SearchBar extends Component {
 
     render() {
         return <main>
+                <h1>Basic react searchbar with typeahead</h1>
                 <form className="searchProductForm" onSubmit={this.onFormSubmit.bind(this)} >
                     <span className="searchProductInputAndButtonWrapper">
                         <input
@@ -70,7 +71,7 @@ export default class SearchBar extends Component {
                 </form>
                 <section className="pageDescription">
                     <p>
-                        Available Hardcoded Options: "bag", "wallet", "green", "leather", "Lena", "Les", "NASA", "x-ray", "zebra"
+                        Available Hardcoded Options: "bag", "wallet", "green", "leather", "Lena", "Les", "NASA", "x-ray", "zebra", "Bob", "U.S.A"
                     </p>
                     <p>
                         Source Code <a href="https://github.com/lippyDesign/basic-react-searchbar-with-typeahead" target="_blank">on Git Hub</a>
